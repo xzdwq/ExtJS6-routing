@@ -4,21 +4,38 @@ Ext.define('xzdwq.router.Router', {
   views: 'xzdwq.view.Viewport',
   routes: {
     'home': {
-      action: 'onHome'
+      action: 'onRoutingHome'
+    },
+    'structur': {
+      action: 'onRoutingStructur'
     }
   },
-  onHome: function() {
-    this.addContentToCenterRegion(
+  //CONTROL BOTTOM TOOLBAR
+  init: function() {
+    this.control ({
+      '#structur': {
+        click: this.onClickStuctur
+      }
+    });
+  },
+  onClickStuctur: function(btn, e, eOpts) {
+    this.redirectTo( btn.itemId );
+  },
+  //ROUTING
+  onRoutingHome: function() {
+    this.onReplacement(
       { xtype: 'home' }
     );
   },
-  addContentToCenterRegion: function( config ) {
-    var viewport = Ext.getCmp('viewport');
-    var cmp = viewport.down('[xtype=' + config.xtype + ']');
-    if( !cmp ) {
-      viewport.removeAll();
-        cmp = viewport.add( config );
-    }
-    return cmp;
+  onRoutingStructur: function() {
+    this.onReplacement(
+      { xtype: 'structur' }
+    );
+  },
+  //ROUTING ELEMENT PANEL
+  onReplacement: function(el) {
+    var itemViewport = Ext.ComponentQuery.query('#view-panel')[0];
+    itemViewport.remove(itemViewport.items.items[0]);
+    itemViewport.add(el);
   }
 });

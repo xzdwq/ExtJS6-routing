@@ -7,9 +7,6 @@ Ext.define('xzdwq.view.home.Home', {
   ],
   controller: 'home',
   viewModel: 'home',
-  bind: {
-      title: '{title}'
-  },
   bodyPadding: 10,
-  html: 'This is our main content area :)'
+  html: 'Домашняя страница портала'
 });
