@@ -8,17 +8,32 @@ Ext.define('xzdwq.router.Router', {
     },
     'structur': {
       action: 'onRoutingStructur'
+    },
+    'scheduleSMR': {
+      action: 'onRoutingScheduleSMR'
     }
   },
   //CONTROL BOTTOM TOOLBAR
   init: function() {
-    this.control ({
+    this.control({
+      '#home': {
+        click: this.onClickHome
+      },
       '#structur': {
         click: this.onClickStuctur
+      },
+      '#scheduleSMR': {
+        click: this.onClickSheduleSMR
       }
     });
   },
   onClickStuctur: function(btn, e, eOpts) {
+    this.redirectTo( btn.itemId );
+  },
+  onClickHome: function(btn, e, eOpts) {
+    this.redirectTo( btn.itemId );
+  },
+  onClickSheduleSMR: function(btn, e, eOpts) {
     this.redirectTo( btn.itemId );
   },
   //ROUTING
@@ -30,6 +45,11 @@ Ext.define('xzdwq.router.Router', {
   onRoutingStructur: function() {
     this.onReplacement(
       { xtype: 'structur' }
+    );
+  },
+  onRoutingScheduleSMR: function() {
+    this.onReplacement(
+      { xtype: 'scheduleSMR' }
     );
   },
   //ROUTING ELEMENT PANEL
