@@ -22,21 +22,17 @@ Ext.define('xzdwq.view.Viewport', {
           {
             icon: 'img/home.gif',
             itemId: 'home',
-            cls: 'custom-button',
-            enableToggle: true,
             style: { background: '#025b80' }
           },
           {
             text: 'Структура',
             itemId: 'structur',
-            enableToggle: true,
             cls: 'custom-button',
             style: { background: '#025b80' }
           },
           {
             text: 'График СМР',
             itemId: 'scheduleSMR',
-            enableToggle: true,
             cls: 'custom-button',
             style: { background: '#025b80' }
           }

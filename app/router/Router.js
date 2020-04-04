@@ -27,10 +27,10 @@ Ext.define('xzdwq.router.Router', {
       }
     });
   },
-  onClickStuctur: function(btn, e, eOpts) {
+  onClickHome: function(btn, e, eOpts) {
     this.redirectTo( btn.itemId );
   },
-  onClickHome: function(btn, e, eOpts) {
+  onClickStuctur: function(btn, e, eOpts) {
     this.redirectTo( btn.itemId );
   },
   onClickSheduleSMR: function(btn, e, eOpts) {
